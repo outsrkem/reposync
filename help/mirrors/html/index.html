@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/statics/mirror.css" media="screen" />
+    <link rel="shortcut icon" href="/.media/favicon.ico" />
+</head>
+
+<body>
+
+<h1>yum源</h1>
+
+<table id="distro-table" cellpadding="0" cellspacing="0">
+    <colgroup>
+        <col width="25%"/>
+        <col width="25%"/>
+        <col width="25%"/>
+        <col width="25%"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>镜像名</th>
+            <th>状态</th>
+            <th>上次更新时间</th>
+            <th>使用帮助</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="even">
+            <td><a href="/centos">centos</a></td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="/">刷新</a></td>
+        </tr>
+    </tbody>
+</table>
+<h1>CentOS Yum 源使用帮助</h1>
+
+<div class="hr"><hr /></div>
+<div id="mirror-usage">
+    <h3>使用说明</h3>
+    <p>首先备份/etc/yum.repos.d/CentOS-Base.repo</p>
+    <pre>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</pre>
+    <p>下载对应版本repo文件, 放入/etc/yum.repos.d/(操作前请做好相应备份)</p>
+    <pre>curl -o /etc/yum.repos.d/CentOS-Base-Local.repo http://mirrors.local/repo/CentOS-Base-Local.repo</pre>
+    <p>运行以下命令生成缓存</p>
+    <pre>
+yum clean all
+yum makecache</pre>
+</div>
+</body>
+</html>
+

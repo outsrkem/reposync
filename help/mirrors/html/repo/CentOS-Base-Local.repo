@@ -1,0 +1,67 @@
+[base]
+name=CentOS-$releasever - Base
+failovermethod=priority
+baseurl=http://mirrors.local/centos/7/x86_64/base
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+[updates]
+name=CentOS-$releasever - Updates
+failovermethod=priority
+baseurl=http://mirrors.local/centos/7/x86_64/extras
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+[extras]
+name=CentOS-$releasever - Extras
+failovermethod=priority
+baseurl=http://mirrors.local/centos/7/x86_64/extras
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-CentOS-7
+
+[docker-ce-stable]
+name=Docker CE Stable - $basearch
+baseurl=http://mirrors.local/centos/7/x86_64/docker-ce-stable
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-docker-ce
+
+[epel]
+name=Extra Packages for Enterprise Linux 7 - $basearch
+baseurl=http://mirrors.local/centos/7/x86_64/epel
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-EPEL-7
+
+[nginx]
+name=nginx repo
+baseurl=http://mirrors.local/centos/7/x86_64/nginx
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-nginx
+
+[WANdisco-git]
+name=WANdisco Distribution of git
+baseurl=http://mirrors.local/centos/7/x86_64/WANdisco-git
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-WANdisco
+
+[elrepo]
+name=ELRepo.org Community Enterprise Linux Repository - el7
+baseurl=http://mirrors.local/centos/7/x86_64/elrepo
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-elrepo.org
+protect=0
+
+[elrepo-kernel]
+name=ELRepo.org Community Enterprise Linux Kernel Repository - el7
+baseurl=http://mirrors.local/centos/7/x86_64/elrepo-kernel
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-elrepo.org
+protect=0
