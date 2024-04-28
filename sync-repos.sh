@@ -23,8 +23,15 @@ function check_update_time(){
     # 计算rpm包更新时间与基准时间，如果在基准时间之后则返回1
     local repo=$1
     local mar=$2
-    ct=`stat -c %y /opt/mirrors/centos/7/x86_64/$repo`
-    if [ $(($mar - $(date -d "$ct" +%s))) -lt 0 ];then
+    # 查找最新同步到的rpm包
+    # newrpm=/opt/mirrors/centos/7/x86_64/elrepo-kernel/RPMS/kernel-ml-doc-6.8.8-1.el7.elrepo.noarch.rpm
+    newrpm=`find /opt/mirrors/centos/7/x86_64/$repo -type f -name "*.rpm" -ctime -1 -exec ls -tr {} +| head -1`
+    if [ -z "$newrpm" ];then
+        return 0
+    fi
+    # stat %Z上次更改的时间(Change time)，自纪元以来的秒数
+    ctime=`stat -c %Z ${newrpm}`
+    if [ $((${mar} - ${ctime})) -lt 0 ];then
         return 1
     else
         return 0
