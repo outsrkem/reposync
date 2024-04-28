@@ -1,8 +1,8 @@
 FROM centos:7.8.2003
 
 #COPY repos/ /etc/yum.repos.d
-RUN rm -rf /etc/yum.repos.d/* && \
-    curl -o /etc/yum.repos.d/CentOS-Base-Local.repo http://mirrors.local.com/repo/CentOS-Base-Local.repo
+#RUN rm -rf /etc/yum.repos.d/* && \
+#    curl -o /etc/yum.repos.d/CentOS-Base-Local.repo http://mirrors.local.com/repo/CentOS-Base-Local.repo
 
 RUN yum install --downloadonly --downloaddir=/tmp/package createrepo yum-utils
 
