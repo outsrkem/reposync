@@ -14,7 +14,10 @@ for f in `ls logs`;do
 done
 
 # 清理旧容器
-docker rm reposync
+ct=`docker ps -a |grep reposync$`
+if [ -n "$ct" ];then
+    docker rm reposync
+fi
 
 # 启动任务
 sleep 1
