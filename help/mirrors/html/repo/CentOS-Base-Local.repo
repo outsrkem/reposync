@@ -22,19 +22,19 @@ enabled=1
 gpgcheck=1
 gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-[docker-ce-stable]
-name=Docker CE Stable - $basearch
-baseurl=http://mirrors.local/centos/7/x86_64/docker-ce-stable
-enabled=1
-gpgcheck=1
-gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-docker-ce
-
 [epel]
 name=Extra Packages for Enterprise Linux 7 - $basearch
 baseurl=http://mirrors.local/centos/7/x86_64/epel
 enabled=1
 gpgcheck=1
 gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-EPEL-7
+
+[docker-ce-stable]
+name=Docker CE Stable - $basearch
+baseurl=http://mirrors.local/centos/7/x86_64/docker-ce-stable
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-docker-ce
 
 [nginx]
 name=nginx repo
@@ -49,6 +49,13 @@ baseurl=http://mirrors.local/centos/7/x86_64/WANdisco-git
 enabled=1
 gpgcheck=1
 gpgkey=http://mirrors.local/centos/rpm-gpg/RPM-GPG-KEY-WANdisco
+
+[kubernetes]
+name=Kubernetes
+baseurl=http://mirrors.local.com/centos/7/x86_64/kubernetes
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.local.com/centos/rpm-gpg/RPM-GPG-KEY-kubernetes
 
 [elrepo]
 name=ELRepo.org Community Enterprise Linux Repository - el7
